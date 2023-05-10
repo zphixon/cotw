@@ -179,10 +179,9 @@ impl Board {
 impl std::fmt::Debug for Board {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         if f.alternate() {
-            writeln!(f, "\n 1234567")?;
+            writeln!(f)?;
             let mut y = 7;
             for row in self.board {
-                write!(f, "{}", y)?;
                 for square in row {
                     match square {
                         Square::Empty => write!(f, " ")?,
@@ -198,9 +197,10 @@ impl std::fmt::Debug for Board {
                         },
                     }
                 }
-                writeln!(f, "")?;
+                writeln!(f, "{}", y)?;
                 y -= 1;
             }
+            writeln!(f, "1234567")?;
             Ok(())
         } else {
             f.debug_list().entries(self.board.iter()).finish()
