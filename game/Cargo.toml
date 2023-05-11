@@ -8,5 +8,5 @@ default = ['debug']
 debug = []
 
 [dependencies]
-tracing.workspace = true
-tracing-subscriber.workspace = true
+tracing = '0.1.37'
+tracing-subscriber = '0.3.17'
