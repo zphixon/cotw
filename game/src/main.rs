@@ -38,7 +38,7 @@ fn main() {
             &game,
             Move {
                 player: Player::Beige,
-                messenger: BoardCoordinate::new(5,6).unwrap(),
+                messenger: BoardCoordinate::new(5, 6).unwrap(),
                 direction: Direction::S2,
                 first_throw: Direction::NE,
                 extra_throws: None,
